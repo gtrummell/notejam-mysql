@@ -3,8 +3,5 @@ language: python
 services:
   - docker
 
-before_script:
-  - make get-deps
-
 script:
   - make ci
