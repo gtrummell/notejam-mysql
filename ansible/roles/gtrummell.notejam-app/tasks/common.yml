@@ -66,3 +66,10 @@
   when: node_env != "production"
   tags:
     - app
+
+- name: Ensure Node home has the correct owner
+  file:
+    group: "{{ node_group }}"
+    owner: "{{ node_user }}"
+    recurse: true
+    path: "{{ node_home }}"
