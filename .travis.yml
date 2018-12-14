@@ -3,19 +3,6 @@ language: python
 services:
   - docker
 
-env:
-  - MYSQL_ROOT_PASSWORD="SomethingSecure123!"
-  - MYSQL_TCP_PORT=3306
-  - NODE_ENV=development
-  - NOTEJAM_PORT=3000
-  - NOTEJAM_VERSION=0.0.1
-  - TF_VAR_mysql_root_password="SomethingSecure123!"
-  - TF_VAR_mysql_tcp_port=3306
-  - TF_VAR_node_env=development
-  - TF_VAR_notejam_port=3000
-  - TF_VAR_notejam_version="0.0.1"
-  - TF_VAR_ssh_key_name=notejam
-
 before_script:
   - make get-deps
 

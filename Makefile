@@ -1,6 +1,10 @@
 .PHONY: help
 .DEFAULT_GOAL := help
 
+export NOTEJAM_VERSION := $(shell jq -r '.version' notejam/package.json)
+export TF_VAR_notejam_version := $(shell jq -r '.version' notejam/package.json)
+
+
 # Self-documenting makefile compliments of François Zaninotto http://bit.ly/2PYuVj1
 
 help:
