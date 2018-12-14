@@ -13,10 +13,6 @@ platforms:
   - name: ubuntu-bionic
     image: ubuntu:18.04
     pull: true
-    exposed_ports:
-      - 3000/tcp
-    published_ports:
-      - 0.0.0.0:3000:3000/tcp
     env:
       MYSQL_ROOT_PASSWORD: "SomethingSecure123!"
       MYSQL_TCP_PORT: "3306"

@@ -17,6 +17,9 @@ clean: ## Sanitize the workspace by removing node modules, containers, etc.
 	@for role_dep in $(shell grep "^- src:" requirements.yml | sed 's/^-\ src\:\ //g') ; do \
 		rm -rf ../$$role_dep ; \
 	done
+	@for role_dep in $(shell grep "^- src:" requirements.yml | sed 's/^-\ src\:\ //g') ; do \
+		rm -rf ~/.ansible/roles/$$role_dep ; \
+	done
 
 test: clean get-deps  ## Test the code needed to build a Docker images for the application
 	@molecule test

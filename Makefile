@@ -42,9 +42,6 @@ global-getdeps: ## Retrieve dependencies locally
 	@docker pull sdesbure/yamllint:latest
 	@docker pull sahsu/docker-jsonlint:latest
 	@docker pull ubuntu:18.04
-	@pip install -r requirements.txt
-	@cd ./notejam && npm install
-	@ansible-galaxy install -c -p ./ansible/roles -r ./ansible/requirements.yml
 
 rm-stack-aws: ## Tear down the AWS stack using Terraform
 	@cd terraform && $(MAKE) rm-stack-aws
