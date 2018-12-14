@@ -4,4 +4,4 @@
   connection: local
   become: yes
   roles:
-    - notejam-app
+    - gtrummell.notejam-app

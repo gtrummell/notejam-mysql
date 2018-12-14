@@ -42,7 +42,7 @@ NoteJam-MySQL Architecture
 
 ![NoteJam-MySQL Architecture][arch]
 
-[arch]: docs/notejam-mysql-infra-diagram.png "NoteJam-MySQL Architecture"
+[arch]:docs/notejam-mysql-infra-diagram.png "NoteJam-MySQL Architecture"
 
 
 Requirements

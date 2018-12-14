@@ -50,7 +50,7 @@
 - name: Install Node modules in production mode
   npm:
     executable: "/usr/bin/npm"
-    path: "{{ node_home }}/app/notejam"
+    path: "{{ node_home }}/app"
     production: "yes"
     state: "present"
   when: node_env == "production"
@@ -60,7 +60,7 @@
 - name: Install Node modules in non-production mode
   npm:
     executable: "/usr/bin/npm"
-    path: "{{ node_home }}/app/notejam"
+    path: "{{ node_home }}/app"
     production: "yes"
     state: "present"
   when: node_env != "production"
