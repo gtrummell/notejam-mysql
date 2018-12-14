@@ -42,6 +42,7 @@ global-getdeps: ## Retrieve dependencies locally
 	@docker pull sdesbure/yamllint:latest
 	@docker pull sahsu/docker-jsonlint:latest
 	@docker pull ubuntu:18.04
+	@pip install --upgrade -r requirements.txt
 
 rm-stack-aws: ## Tear down the AWS stack using Terraform
 	@cd terraform && $(MAKE) rm-stack-aws
