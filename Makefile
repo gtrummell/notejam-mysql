@@ -36,12 +36,13 @@ global-clean: ## Sanitize the workspace by removing node modules, containers, et
     done
 
 global-getdeps: ## Retrieve dependencies locally
-	@docker pull hadolint/hadolint:latest
-	@docker pull mysql:5.7
-	@docker pull node:10.13.0
-	@docker pull sdesbure/yamllint:latest
-	@docker pull sahsu/docker-jsonlint:latest
-	@docker pull ubuntu:18.04
+	@docker pull gtrummell/iac-testkit-ubuntu:18.04 | cat
+	@docker pull hadolint/hadolint:latest | cat
+	@docker pull mysql:5.7 | cat
+	@docker pull node:10.13.0 | cat
+	@docker pull sdesbure/yamllint:latest | cat
+	@docker pull sahsu/docker-jsonlint:latest | cat
+	@docker pull ubuntu:18.04 | cat
 	@pip install --upgrade -r requirements.txt
 
 rm-stack-aws: ## Tear down the AWS stack using Terraform

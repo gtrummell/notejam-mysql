@@ -10,6 +10,9 @@ help:
 build-stack-aws: test-stack-aws ## Build a complete application stack in Amazon AWS EC2/RDS using Terraform
 	@docker run -it -v $(PWD):/terraform gtrummell/iac-testkit-ubuntu:18.04 cd terraform && terraform apply
 
+get-deps: ## Get toolchain dependencies
+	@docker pull gtrummell/iac-testkit-ubuntu:18.04 | cat
+
 init-clean: ## Sanitize the workspace by removing modules, temp files, etc.
 	@rm -rf ./.terraform
 
@@ -26,4 +29,4 @@ test-stack-aws: init validate ## Test a complete application stack in Amazon AWS
 	@docker run -it -v $(PWD):/terraform gtrummell/iac-testkit-ubuntu:18.04 cd terraform && terraform plan
 
 validate-stack-aws: init ## Validate a complete application stack for Amazon AWS EC2/RDS using Terraform
-	@docker run -it -v $(PWD):/terraform gtrummell/iac-testkit-ubuntu:18.04 cd terraform && terraform validate
+	@docker run -it -v $(PWD):/terraform gtrummell/iac-testkit-ubuntu:18.04 bash -c 'cd /terraform && /usr/bin/terraform validate'
