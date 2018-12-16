@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3'
 
 services:
 
@@ -16,12 +16,12 @@ services:
   app:
     container_name: notejam-app
     restart: "no"
-    image: "node:10.13.0"
+    image: node:10.13.0
     depends_on:
       - "db"
     user: "node"
-    working_dir: "/home/node/app/notejam"
-    command: "/home/node/app/notejam/start-notejam.sh"
+    working_dir: "/home/node/app/"
+    command: "/home/node/app//start-notejam.sh"
     environment:
       MYSQL_HOST: "notejam-db"
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
@@ -30,9 +30,9 @@ services:
       NOTEJAM_HOST: "notejam-app"
       NOTEJAM_PORT: "${NOTEJAM_PORT}"
     ports:
-    - "${NOTEJAM_PORT}:${NOTEJAM_PORT}"
+      - "${NOTEJAM_PORT}:${NOTEJAM_PORT}"
     volumes:
-    - "./:/home/node/app"
+      - "./:/home/node/app"
 
 volumes:
   sql:

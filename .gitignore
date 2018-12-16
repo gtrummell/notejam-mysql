@@ -5,6 +5,7 @@ temp
 
 # Ansible
 *.retry
+__pycache__
 
 # Terraform
 .terraform/
@@ -17,6 +18,10 @@ temp
 # Packages
 *.egg
 *.egg-info
+*.tgz
+*.tar.gz
+*.zip
+*.tar.xz
 dist
 build
 eggs
@@ -27,8 +32,6 @@ develop-eggs
 .installed.cfg
 lib
 lib64
-.tgz
-.tar.gz
 
 # Installer logs
 pip-log.txt
@@ -64,3 +67,10 @@ bower_components
 
 #.phar archives
 *.phar
+
+# Python modules
+.venv
+.virtualenv
+venv/
+virtualenv/
+

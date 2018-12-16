@@ -42,7 +42,7 @@ NoteJam-MySQL Architecture
 
 ![NoteJam-MySQL Architecture][arch]
 
-[arch]: docs/notejam-mysql-infra-diagram.png "NoteJam-MySQL Architecture"
+[arch]:docs/notejam-mysql-infra-diagram.png "NoteJam-MySQL Architecture"
 
 
 Requirements
@@ -121,7 +121,6 @@ export MYSQL_ROOT_PASSWORD="SomethingSecure123!"
 export MYSQL_TCP_PORT=3306
 export NODE_ENV=development
 export NOTEJAM_PORT=3000
-export NOTEJAM_VERSION=$(jq -r '.version' notejam/package.json)
 
 make build-stack-docker
 ```
@@ -136,18 +135,16 @@ stack user.
 ```
 cd notejam-mysql
 
-export MYSQL_ROOT_PASSWORD="SomethingSecure123!"
-export MYSQL_TCP_PORT=3306
-export NODE_ENV=development
-export NOTEJAM_PORT=3000
-export NOTEJAM_VERSION=$(jq -r '.version' notejam/package.json)
+MYSQL_ROOT_PASSWORD="SomethingSecure123!"
+MYSQL_TCP_PORT=3306
+NODE_ENV=development
+NOTEJAM_PORT=3000
 
-export TF_VAR_mysql_root_password="${MYSQL_ROOT_PASSWORD}"
-export TF_VAR_mysql_tcp_port="${MYSQL_TCP_PORT}"
-export TF_VAR_node_env="${NODE_ENV}"
-export TF_VAR_notejam_port="${NOTEJAM_PORT}"
-export TF_VAR_notejam_version="$(jq -r '.version' notejam/package.json)"
-export TF_VAR_ssh_key_name="notejam"
+TF_VAR_mysql_root_password="${MYSQL_ROOT_PASSWORD}"
+TF_VAR_mysql_tcp_port="${MYSQL_TCP_PORT}"
+TF_VAR_node_env="${NODE_ENV}"
+TF_VAR_notejam_port="${NOTEJAM_PORT}"
+TF_VAR_ssh_key_name="notejam"
 
 make build-stack-ec2
 ```

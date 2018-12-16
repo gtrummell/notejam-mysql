@@ -8,12 +8,12 @@ ENV NOTEJAM_PORT=3000
 
 EXPOSE $NOTEJAM_PORT/tcp
 USER node
-WORKDIR /home/node/app/notejam
+WORKDIR /home/node/app/
 
 COPY --chown=node:node . /home/node/app
 
 RUN npm install &&\
-    curl -s https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /home/node/app/notejam/wait-for-it.sh &&\
-    chmod 0755 /home/node/app/notejam/wait-for-it.sh
+    curl -s https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /home/node/app//wait-for-it.sh &&\
+    chmod 0755 /home/node/app//wait-for-it.sh
 
-CMD [ "/home/node/app/notejam/start-notejam.sh" ]
+CMD [ "/home/node/app//start-notejam.sh" ]
